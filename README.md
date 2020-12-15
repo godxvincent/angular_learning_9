@@ -25,3 +25,24 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## What I learnt.
+
+1. Diferentes aproximaciones que tiene angular para trabajar formularios.
+2. Profundizaremos en el uso del ngModel.
+3. Utilizar las validaciones pre fabricadas.
+4. Crear validaciones personalizadas.
+5. Crear validaciones asíncronas.
+6. Realizar un submit utilizando el ngSubmit.
+7. Postear información únicamente cuando el formulario es valido,
+8. Crear formularios del lado del componente.
+9. Cargar información por defecto a los formularios.
+10. Subscribirnos a los cambios de los valores de los formularios.
+11. Entre otras cosas bien interesantes.
+
+
+
+## **This project was created by godxvincent.**
+
+![Godxvincent](DFFOO_Vincent_Valentine.png)
+
