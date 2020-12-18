@@ -1,6 +1,6 @@
 <h4>Formularios <small> template </small></h4>
 <hr>
-<form autocomplete="off" form>
+<form autocomplete="off" (ngSubmit)="onSummit( formulario )" #formulario="ngForm">
 
     <div>
 
@@ -8,7 +8,7 @@
             <label class="col-2 col-form-label">Nombre</label>
             <div class="col-8">
 
-                <input class="form-control" type="text" placeholder="Nombre">
+                <input class="form-control" type="text" placeholder="Nombre" required minlength="5" name="nombre" ngModel [class.is-invalid]="nameModel.invalid && nameModel.touched" #nameModel="ngModel" [ngModel]="usuario.nombre">
             </div>
         </div>
 
@@ -16,7 +16,7 @@
             <label class="col-2 col-form-label">Apellido</label>
             <div class="col-8">
 
-                <input class="form-control" type="text" placeholder="Apellido">
+                <input class="form-control" type="text" placeholder="Apellido" required minlength="5" name="apellido" ngModel [class.is-invalid]="apellidoModel.invalid && apellidoModel.touched" #apellidoModel="ngModel" [ngModel]="usuario.apellido">
             </div>
         </div>
 
@@ -26,7 +26,7 @@
         <label class="col-2 col-form-label">Correo</label>
         <div class="col-8">
 
-            <input class="form-control" type="email" placeholder="Correo electrónico">
+            <input class="form-control" type="email" placeholder="Correo electrónico" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="email" ngModel [class.is-invalid]="emailModel.invalid && emailModel.touched" #emailModel="ngModel" [ngModel]="usuario.email">
         </div>
     </div>
 
