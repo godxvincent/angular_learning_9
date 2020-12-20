@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { CountriesService } from '../../services/countries.service';
 
 @Component({
   selector: 'app-template',
@@ -9,16 +10,31 @@ import { NgForm } from '@angular/forms';
 export class TemplateComponent implements OnInit {
 
   usuario = {
-    nombre : 'Ricardo',
-    apellido : 'Vargas',
-    email : 'godxvincent@gmail.com'
+    nombre : '',
+    apellido : '',
+    email : '',
+    pais : ''
   };
-  constructor() { }
+  paises: any[];
+  constructor(private countryService: CountriesService) { }
 
   ngOnInit(): void {
+    this.countryService.getPaises().subscribe( paises => {
+      this.paises = paises;
+      this.paises.unshift( {
+        codigo: '',
+        nombre: 'Seleccione un país'
+      });
+      console.log(this.paises);
+    });
   }
 
   onSummit( formulario: NgForm ): void {
+
+    if ( formulario.invalid ) {
+      Object.values( formulario.controls ).forEach ( control => control.markAsTouched() );
+      return;
+    }
     console.log( formulario );
   }
 
